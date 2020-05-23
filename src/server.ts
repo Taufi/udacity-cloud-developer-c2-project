@@ -1,4 +1,5 @@
 import express from 'express';
+import { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
@@ -6,6 +7,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   // Init the Express application
   const app = express();
+  // const isImageUrl = require('is-image-url');
+  const isImageUrl = require('is-image-url');
 
   // Set the network port
   const port = process.env.PORT || 8082;
@@ -35,6 +38,28 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   // Displays a simple message to the user
   app.get( "/", async ( req, res ) => {
     res.send("try GET /filteredimage?image_url={{}}")
+  } );
+
+   // Get an image from an url
+  app.get( "/filteredimage/", ( req: Request, res: Response ) => {
+    let { image_url } = req.query;
+
+    if ( !image_url ) {
+      return res.status(400).send(`image_url is required`);
+    }
+
+    if (!isImageUrl(image_url)) {
+      return res.status(404).send(`${image_url} is no image!`);
+    }
+  
+    filterImageFromURL(image_url).then (imageName => {
+      res.status(200).sendFile(imageName)
+      res.on('finish', function() {
+        deleteLocalFiles([imageName])})
+    }).catch (err => {
+      res.status(404).send(`${image_url} is no image!`);
+    });
+
   } );
   
 
