@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "b40f5176-65cd-4de0-9994-a0a63909c15c",
+		"name": "KD-udacity-c2-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/filteredimage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/filteredimage?image_url=https://homepages.cae.wisc.edu/~ece533/images/watch.png",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://homepages.cae.wisc.edu/~ece533/images/watch.png"
+						}
+					]
+				},
+				"description": "request a filtered image"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0adbf70b-f5d3-4dca-8ac6-b43597d6d238",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f9364ff8-528c-414c-af3f-7fe083de385f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "442351db-c2c4-4d35-9f83-07b1e0666e84",
+			"key": "host",
+			"value": "http://localhost:8082",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
