@@ -6,5 +6,5 @@
 
 1. The code is in [this directory](https://github.com/Taufi/udacity-cloud-developer-c2-project) 
 2. A screenshot of the elastic beanstalk application dashboard is in [here](https://github.com/Taufi/udacity-cloud-developer-c2-project/blob/master/deployment_screenshots)
-3. This is the [endpoint URL](http://udacity-cloud-developer-c2-project-dev.us-east-2.elasticbeanstalk.com) for my running elastic beanstalk deployment. An example of a filtered image is [here](http://udacity-cloud-developer-c2-project-dev.us-east-2.elasticbeanstalk.com/filteredimage?image_url=https://homepages.cae.wisc.edu/~ece533/images/watch.png)
+3. This is the [endpoint URL](http://udacity-cloud-developer-c2-project-dev2.us-east-2.elasticbeanstalk.com) for my running elastic beanstalk deployment. An example of a filtered image is [here](http://udacity-cloud-developer-c2-project-dev2.us-east-2.elasticbeanstalk.com/filteredimage?image_url=https://homepages.cae.wisc.edu/~ece533/images/watch.png)
 
